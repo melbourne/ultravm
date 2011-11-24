@@ -1,7 +1,14 @@
 require 'xmlrpc/client'
 
+require 'ultravm/vm'
+
 module UltraVM
   class Client
+    
+    require 'ultravm/client/vms'
+    
+    include UltraVM::Client::VM
+    
     attr_accessor :options
     
     def initialize(options = {})
