@@ -1,6 +1,6 @@
 module UltraVM
   
   autoload :Config, "ultravm/config"
-  autoload :Connection, "ultravm/connection"
+  autoload :Client, "ultravm/client"
   
 end

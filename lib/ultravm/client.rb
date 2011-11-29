@@ -1,5 +1,3 @@
-require 'xmlrpc/client'
-
 require 'ultravm/vm'
 
 module UltraVM
@@ -7,14 +5,14 @@ module UltraVM
     
     require 'ultravm/client/vms'
     
-    include UltraVM::Client::VM
+    include UltraVM::Client::VMs
     
     attr_accessor :options
     
     def initialize(options = {})
-      options = default_options.merge(options)
+      @options = default_options.merge(options)
       Config::VALID_OPTIONS.each do |key|
-        instance_variable_set("@#{key}", options[key])
+        instance_variable_set("@#{key}", @options[key])
       end
     end
     

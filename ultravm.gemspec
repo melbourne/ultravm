@@ -9,7 +9,7 @@ Gem::Specification.new do |gem|
   EOS
 
   gem.files = `git ls-files`.split("\n")
-
+  
   gem.add_development_dependency "rake"
   gem.add_development_dependency "rspec"
 
