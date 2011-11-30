@@ -14,5 +14,5 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency "rspec"
 
   gem.author = "James Rose"
-  gem.email  = "jamegem.rose@melbourne.co.uk"
+  gem.email  = "james.rose@melbourne.co.uk"
 end
