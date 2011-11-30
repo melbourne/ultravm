@@ -49,6 +49,6 @@ vm.label # => "happy-kittens"
 ```
 
 ## TODO
-* VM Stats
+* Network Stats
 * Host Stats
 * Change power states

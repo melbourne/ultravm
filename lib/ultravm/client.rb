@@ -1,4 +1,5 @@
 require 'ultravm/vm'
+require 'ultravm/metric'
 require 'xmlrpc/client'
 
 module UltraVM

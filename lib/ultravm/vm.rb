@@ -16,6 +16,23 @@ module UltraVM
       @client.get('VM', :get_power_state, @uuid)
     end
     
+    # Metrics associated with this VM
+    def metrics
+      Metric.new(@client, @client.get('VM', :get_metrics, @uuid))
+    end
+    
+    # The value of this field at VM start time acts as a hard limit of the amount of memory a guest can use. 
+    # New values only take effect on reboot.
+    def max_memory
+      @client.get('VM', :get_memory_static_max, @uuid)
+    end
+    
+    # Statically-set (i.e. absolute) mininum (bytes). 
+    # The value of this field indicates the least amount of memory this VM can boot with without crashing.
+    def min_memory
+      @client.get('VM', :get_memory_static_min, @uuid)
+    end
+    
     # Returns whether the VM is running or not.
     def running?
       power_state == "Running"
