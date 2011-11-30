@@ -3,7 +3,7 @@ module UltraVM
     module VMs
       
       def vms
-        get('host', :get_resident_VMs).collect do |vm|
+        get('host', :resident_VMs).collect do |vm|
           UltraVM::VM.new(self, vm)
         end
       end
