@@ -1,4 +1,42 @@
 # UltraVM API
 
-## TODO:
-* Everything.
+## Installation
+
+## Rails
+Add to your Gemfile:
+
+``` ruby
+gem 'ultravm', :git => 'git@github.com:melbourne/ultravm.git'
+```
+
+## Usage
+
+``` ruby
+ultravm = UltraVM::Client.new(:endpoint => "https://path-to-xen-server/", :password => "kittens")
+
+# Connect
+ultravm.connect
+
+# Get all VM objects
+ultravm.vms
+
+# Get first vm
+vm = ultravm.vms.first
+
+# Get VM power state
+vm.power_state # => "Running"
+
+# Check if VM is running
+vm.running? # => true
+
+# Check if VM is halted
+vm.halted? # => false
+
+# Get VM label
+vm.label # => "happy-kittens"
+```
+
+## TODO
+* VM Stats
+* Host Stats
+* Change power states
