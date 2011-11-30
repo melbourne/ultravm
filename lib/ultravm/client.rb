@@ -36,8 +36,8 @@ module UltraVM
     end
     
     # API accessor.
-    def get(proxy_name, method, object_uuid = nil)
-      @client.proxy(proxy_name).send(:"get_#{method}", @sid, object_uuid || uuid)['Value']
+    def get(proxy_name, method, object_uuid = nil, argument = nil)
+      @client.proxy(proxy_name).send(:"get_#{method}", @sid, argument ? argument : (object_uuid || uuid))['Value']
     end
     
     def default_options

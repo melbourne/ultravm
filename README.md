@@ -59,10 +59,17 @@ metrics.started_at # => 2011-08-24 12:10:02 UTC
 # Get VM install time
 metrics.installed_at # => 011-08-24 12:10:02 UTC 
 
+# Find VMs by label
+ultravm.vms_by_name('cool-vm') # => [UltraVM::VM, UltraVM::VM, ...]
+
+# Find a VM by label
+ultravm.vm_by_name('cool_vm') # => UltraVm::VM
+
 ```
 
 
 ## TODO
+* Make vms_by_name search using any attribute.
 * Network Stats
 * Host Stats
 * Change power states
