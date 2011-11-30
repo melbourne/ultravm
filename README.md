@@ -11,10 +11,12 @@ gem 'ultravm', :git => 'git@github.com:melbourne/ultravm.git'
 
 ## Command Line
 
+<pre>
 $ git clone git@github.com:melbourne/ultravm.git
 $ bundle install
 $ rake install
-  
+</pre>
+
 ``` ruby
 require 'ultravm'
 ```
