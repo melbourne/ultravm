@@ -11,9 +11,9 @@ gem 'ultravm', :git => 'git@github.com:melbourne/ultravm.git'
 
 ## Command Line
 
-  $ git clone git@github.com:melbourne/ultravm.git
-  $ bundle install
-  $ rake install
+$ git clone git@github.com:melbourne/ultravm.git
+$ bundle install
+$ rake install
   
 ``` ruby
 require 'ultravm'
