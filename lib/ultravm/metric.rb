@@ -8,7 +8,7 @@ module UltraVM
     
     # Guest's actual memory (bytes)
     def memory
-      @client.get('VM_metrics', :get_memory_actual, @uuid)
+      @client.get('VM_metrics', :get_memory_actual, @uuid).to_i
     end
     
     # Time at which this VM was last booted.

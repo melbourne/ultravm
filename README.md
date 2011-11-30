@@ -46,7 +46,21 @@ vm.halted? # => false
 
 # Get VM label
 vm.label # => "happy-kittens"
+
+# Get VM stats
+metrics = vm.metrics # => UltraVM::Metric
+
+# Get VM memory
+metrics.memory # => 4294881280
+
+# Get VM boot time
+metrics.started_at # => 2011-08-24 12:10:02 UTC
+
+# Get VM install time
+metrics.installed_at # => 011-08-24 12:10:02 UTC 
+
 ```
+
 
 ## TODO
 * Network Stats
