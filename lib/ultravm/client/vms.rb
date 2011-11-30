@@ -1,11 +1,11 @@
-require 'xmlrpc/client'
-
 module UltraVM
   class Client
     module VMs
       
       def vms
-        UltraVM::VM.new
+        get('host', :get_resident_VMs).collect do |vm|
+          UltraVM::VM.new(self, vm)
+        end
       end
       
     end

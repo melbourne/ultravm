@@ -3,7 +3,8 @@ module UltraVM
     
     VALID_OPTIONS = [
       :username,
-      :endpoint
+      :endpoint,
+      :password
       ]
     
   end
