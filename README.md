@@ -27,13 +27,13 @@ require 'ultravm'
 ultravm = UltraVM::Client.new(:endpoint => "https://path-to-xen-server/", :password => "kittens")
 
 # Connect
-ultravm.connect
+ultravm.connect # => "host-uuid"
 
 # Get all VM objects
-ultravm.vms
+ultravm.vms # => [UltraVM::VM, UltraVM::VM, ...]
 
 # Get first vm
-vm = ultravm.vms.first
+vm = ultravm.vms.first # => UltraVM::VM
 
 # Get VM power state
 vm.power_state # => "Running"
