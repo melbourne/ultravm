@@ -8,7 +8,7 @@ module UltraVM
     
     # Returns the label of the VM.
     def label
-      @client.get('VM', :name_labe, @uuid)
+      @client.get('VM', :name_label, @uuid)
     end
     
     # Returns the power state of the VM.
