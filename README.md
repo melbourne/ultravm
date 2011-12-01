@@ -63,8 +63,8 @@ vm.force_reboot
 
 # Force shutdown a VM
 vm.force_shutdown
-
 ```
+
 ### Metrics
 ``` ruby
 # Get VM stats
