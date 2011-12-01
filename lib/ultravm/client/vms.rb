@@ -26,6 +26,11 @@ module UltraVM
         end
       end
       
+      # Get a complete VM hash of attributes
+      def record_by_ref(ref)
+        get('VM', :record, ref)
+      end
+      
     end
   end
 end

@@ -32,6 +32,9 @@ ultravm.connect # => "host-uuid"
 # Get all VM objects
 ultravm.vms # => [UltraVM::VM, UltraVM::VM, ...]
 
+# Get a complete VM hash of attributes
+ultravm.record_by_ref UltraVM::VM.uuid # => {"uuid" => ...}
+
 # Get first vm
 vm = ultravm.vms.first # => UltraVM::VM
 
