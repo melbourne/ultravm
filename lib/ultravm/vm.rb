@@ -58,6 +58,11 @@ module UltraVM
       power_state == "Halted"
     end
     
+    # Returns the VM unique ID
+    def uuid
+      @uuid
+    end
+    
     # TODO
     def to_s
       "<UltraVM::VM #{label}>"
