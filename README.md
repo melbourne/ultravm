@@ -47,6 +47,15 @@ vm.halted? # => false
 # Get VM label
 vm.label # => "happy-kittens"
 
+# Start a VM
+vm.start
+
+# Force reboot a VM
+vm.force_reboot
+
+# Force shutdown a VM
+vm.force_shutdown
+
 # Get VM stats
 metrics = vm.metrics # => UltraVM::Metric
 
@@ -65,11 +74,12 @@ ultravm.vms_by_name('cool-vm') # => [UltraVM::VM, UltraVM::VM, ...]
 # Find a VM by label
 ultravm.vm_by_name('cool_vm') # => UltraVm::VM
 
+
 ```
 
 
 ## TODO
 * Make vms_by_name search using any attribute.
+* Power state changes should return whether they succeeded or not.
 * Network Stats
 * Host Stats
-* Change power states
