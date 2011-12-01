@@ -23,17 +23,18 @@ require 'ultravm'
 
 ## Usage
 
+### Connect 
 ``` ruby
 ultravm = UltraVM::Client.new(:endpoint => "https://path-to-xen-server/", :password => "kittens")
 
 # Connect
 ultravm.connect # => "host-uuid"
+```
 
+### General
+``` ruby
 # Get all VM objects
 ultravm.vms # => [UltraVM::VM, UltraVM::VM, ...]
-
-# Get a complete VM hash of attributes
-ultravm.record_by_ref UltraVM::VM.uuid # => {"uuid" => ...}
 
 # Get first vm
 vm = ultravm.vms.first # => UltraVM::VM
@@ -49,7 +50,11 @@ vm.halted? # => false
 
 # Get VM label
 vm.label # => "happy-kittens"
+```
 
+### Power State
+
+``` ruby
 # Start a VM
 vm.start
 
@@ -58,7 +63,9 @@ vm.force_reboot
 
 # Force shutdown a VM
 vm.force_shutdown
-
+```
+### Metrics
+``` ruby
 # Get VM stats
 metrics = vm.metrics # => UltraVM::Metric
 
@@ -70,6 +77,13 @@ metrics.started_at # => 2011-08-24 12:10:02 UTC
 
 # Get VM install time
 metrics.installed_at # => 011-08-24 12:10:02 UTC 
+```
+
+### Finders
+
+``` ruby
+# Get a complete VM hash of attributes
+ultravm.record_by_ref UltraVM::VM.uuid # => {"uuid" => ...}
 
 # Find VMs by label
 ultravm.vms_by_name('cool-vm') # => [UltraVM::VM, UltraVM::VM, ...]
