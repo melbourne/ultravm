@@ -1,6 +1,6 @@
 Gem::Specification.new do |gem|
   gem.name    = "ultravm"
-  gem.version = "0.0.1"
+  gem.version = "0.0.2"
 
   gem.homepage    = "http://github.com/melbourne/ultravm"
   gem.summary     = "UltraVM"

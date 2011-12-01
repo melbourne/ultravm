@@ -11,12 +11,18 @@ module UltraVM
     
     attr_accessor :options
     
+    # UltraVM::Client.new(options)
     def initialize(options = {})
       options = default_options.merge(options)
       
       Config::VALID_OPTIONS.each do |key|
         instance_variable_set("@#{key}", options[key])
       end
+    end
+    
+    # UltraVM::Client.connect(options)
+    def self.connect(options = {})
+      klass = new(options).connect
     end
     
     # Connect and authenticate.
@@ -28,6 +34,8 @@ module UltraVM
       
       @session = @client.proxy('session')
       @sid = @session.login_with_password(@username, @password)['Value']
+      
+      self
     end
     
     # Default UUID is the hosts
