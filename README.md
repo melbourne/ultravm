@@ -39,6 +39,13 @@ ultravm.vms # => [UltraVM::VM, UltraVM::VM, ...]
 # Get first vm
 vm = ultravm.vms.first # => UltraVM::VM
 
+# Get VM label
+vm.label # => "happy-kittens"
+```
+
+### Power State
+
+``` ruby
 # Get VM power state
 vm.power_state # => "Running"
 
@@ -48,13 +55,6 @@ vm.running? # => true
 # Check if VM is halted
 vm.halted? # => false
 
-# Get VM label
-vm.label # => "happy-kittens"
-```
-
-### Power State
-
-``` ruby
 # Start a VM
 vm.start
 
@@ -63,6 +63,7 @@ vm.force_reboot
 
 # Force shutdown a VM
 vm.force_shutdown
+
 ```
 ### Metrics
 ``` ruby
@@ -90,8 +91,6 @@ ultravm.vms_by_name('cool-vm') # => [UltraVM::VM, UltraVM::VM, ...]
 
 # Find a VM by label
 ultravm.vm_by_name('cool_vm') # => UltraVm::VM
-
-
 ```
 
 
