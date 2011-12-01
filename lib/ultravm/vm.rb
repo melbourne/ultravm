@@ -33,6 +33,21 @@ module UltraVM
       @client.get('VM', :memory_static_min, @uuid).to_i
     end
     
+    # Start VM.
+    def start
+      @client.call('VM', :start, @uuid, false, true)
+    end
+    
+    # Force VM to shutdown.
+    def force_shutdown
+      @client.call('VM', :hard_shutdown, @uuid)
+    end
+    
+    # Force VM to reboot.
+    def force_reboot
+      @client.call('VM', :hard_reboot, @uuid)
+    end
+    
     # Returns whether the VM is running or not.
     def running?
       power_state == "Running"
@@ -45,7 +60,7 @@ module UltraVM
     
     # TODO
     def to_s
-      super
+      "<UltraVM::VM #{label}>"
     end
     
   end
