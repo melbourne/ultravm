@@ -4,7 +4,7 @@ module UltraVM
       
       # Get all VMs
       def vms
-        get('host', :resident_VMs).collect do |vm|
+        get('host', :resident_VMs, uuid).collect do |vm|
           UltraVM::VM.new(self, vm)
         end
       end
