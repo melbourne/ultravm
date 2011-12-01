@@ -22,7 +22,7 @@ module UltraVM
     
     # UltraVM::Client.connect(options)
     def self.connect(options = {})
-      klass = new(options).connect
+      new(options).connect
     end
     
     # Connect and authenticate.
