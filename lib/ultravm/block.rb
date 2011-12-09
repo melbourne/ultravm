@@ -16,6 +16,7 @@ module UltraVM
       @client.get('VBD', :device, @uuid)
     end
     
+    # Metrics for block
     def metrics
       BlockMetric.new(@client, @client.get('VBD', :metrics, @uuid))
     end
