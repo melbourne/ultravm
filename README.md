@@ -86,6 +86,7 @@ metrics.installed_at # => 011-08-24 12:10:02 UTC
 
 ### VBD Block
 ``` ruby
+# Get first block
 vbd = vbds.first
 
 # Get VBD name
@@ -93,19 +94,6 @@ vbd.name # => "hda1"
 
 # Get VDI Disk
 disk = vbd.disk # => UltraVM::Disk
-```
-
-### VDI Disk
-``` ruby
-# Get disk label
-disk.label # => "happy-unicorns"
-
-# Get disk size (bytes)
-disk.size # => 10000000000000
-
-# Is the disk read only?
-disk.read_only? # => false
-
 ```
 
 ### VBD Metrics
@@ -118,6 +106,18 @@ metrics.io_read # => 500
 
 # Write bandwidth (KiB/s)
 metrics.io_write # => 100
+```
+
+### VDI Disk
+``` ruby
+# Get disk label
+disk.label # => "happy-unicorns"
+
+# Get disk size (bytes)
+disk.size # => 10000000000000
+
+# Is the disk read only?
+disk.read_only? # => false
 ```
 
 ### Finders
