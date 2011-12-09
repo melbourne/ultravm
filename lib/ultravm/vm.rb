@@ -18,7 +18,7 @@ module UltraVM
     
     # Metrics associated with this VM
     def metrics
-      Metric.new(@client, @client.get('VM', :metrics, @uuid))
+      VMMetric.new(@client, @client.get('VM', :metrics, @uuid))
     end
     
     # The value of this field at VM start time acts as a hard limit of the amount of memory a guest can use. 
@@ -56,6 +56,19 @@ module UltraVM
     # Returns whether the VM is halted or not.
     def halted?
       power_state == "Halted"
+    end
+    
+    def vbds
+      @client.get('VM', :VBDs, @uuid).collect do |block|
+        Block.new(@client, block)
+      end
+    end
+    
+    # Virtual network interfaces
+    def vifs
+      @client.get('VM', :VIFs, @uuid).collect do |interface|
+        Network.new(@client, interface)
+      end
     end
     
     # Returns the VM unique ID

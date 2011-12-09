@@ -1,6 +1,11 @@
-require 'ultravm/vm'
-require 'ultravm/metric'
 require 'xmlrpc/client'
+
+require 'ultravm/vm'
+require 'ultravm/vm_metric'
+require 'ultravm/network'
+require 'ultravm/block'
+require 'ultravm/block_metric'
+require 'ultravm/disk'
 
 module UltraVM
   class Client

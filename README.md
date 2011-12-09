@@ -41,6 +41,9 @@ vm = ultravm.vms.first # => UltraVM::VM
 
 # Get VM label
 vm.label # => "happy-kittens"
+
+# Get block devices
+vbds = vm.vbds # => [UltraVM::Block, UltraVM::Block, ...]
 ```
 
 ### Power State
@@ -63,12 +66,13 @@ vm.force_reboot
 
 # Force shutdown a VM
 vm.force_shutdown
+
 ```
 
-### Metrics
+### VM Metrics
 ``` ruby
 # Get VM stats
-metrics = vm.metrics # => UltraVM::Metric
+metrics = vm.metrics # => UltraVM::VMMetric
 
 # Get VM memory
 metrics.memory # => 4294881280
@@ -78,6 +82,42 @@ metrics.started_at # => 2011-08-24 12:10:02 UTC
 
 # Get VM install time
 metrics.installed_at # => 011-08-24 12:10:02 UTC 
+```
+
+### VBD Block
+``` ruby
+vbd = vbds.first
+
+# Get VBD name
+vbd.name # => "hda1"
+
+# Get VDI Disk
+disk = vbd.disk # => UltraVM::Disk
+```
+
+### VDI Disk
+``` ruby
+# Get disk label
+disk.label # => "happy-unicorns"
+
+# Get disk size (bytes)
+disk.size # => 10000000000000
+
+# Is the disk read only?
+disk.read_only? # => false
+
+```
+
+### VBD Metrics
+``` ruby
+# Get VBD metrics
+metrics = vbd.metrics # => UltraVM::VBDMetric
+
+# Read bandwidth (KiB/s)
+metrics.io_read # => 500
+
+# Write bandwidth (KiB/s)
+metrics.io_write # => 100
 ```
 
 ### Finders
@@ -95,7 +135,7 @@ ultravm.vm_by_name('cool_vm') # => UltraVm::VM
 
 
 ## TODO
-* Make vms_by_name search using any attribute.
+* Make vms_by_attribute search using any attribute.
 * Power state changes should return whether they succeeded or not.
 * Network Stats
 * Host Stats

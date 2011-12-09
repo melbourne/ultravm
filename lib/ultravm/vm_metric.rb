@@ -1,5 +1,5 @@
 module UltraVM
-  class Metric
+  class VMMetric
     
     def initialize(client, uuid)
       @client = client
