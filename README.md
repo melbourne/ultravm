@@ -67,6 +67,15 @@ vm.force_reboot
 # Force shutdown a VM
 vm.force_shutdown
 
+# Pause a VM
+vm.pause
+
+# Unpause a VM
+vm.unpause
+
+# Clone a VM
+newvm = vm.clone # => UltraVM::VM
+
 ```
 
 ### VM Metrics

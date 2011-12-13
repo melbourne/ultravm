@@ -38,6 +38,24 @@ module UltraVM
       @client.call('VM', :start, @uuid, false, true)
     end
     
+    # Pause the specified VM. This can only be called when the specified VM is in the Running state.
+    def pause
+      @client.call('VM', :pause, @uuid)
+    end
+    
+    # Resume the specified VM. This can only be called when the specified VM is in the Paused state.
+    def unpause
+      @client.call('VM', :unpause, @uuid)
+    end
+    
+    # Clones the specified VM, making a new VM. 
+    # Clone automatically exploits the capabilities of the underlying storage repository in which the
+    # VM's disk images are stored (e.g. Copy on Write). This function can only be called when the VM is
+    # in the Halted State.
+    def clone(new_name)
+      UltraVM::VM.new(@client, @client.call('VM', :clone, @uuid, new_name))
+    end
+    
     # Force VM to shutdown.
     def force_shutdown
       @client.call('VM', :hard_shutdown, @uuid)
