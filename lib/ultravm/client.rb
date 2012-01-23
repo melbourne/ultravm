@@ -6,13 +6,16 @@ require 'ultravm/network'
 require 'ultravm/block'
 require 'ultravm/block_metric'
 require 'ultravm/disk'
+require 'ultravm/host'
 
 module UltraVM
   class Client
     
     require 'ultravm/client/vms'
+    require 'ultravm/client/hosts'
     
     include UltraVM::Client::VMs
+    include UltraVM::Client::Hosts
     
     attr_accessor :options
     
