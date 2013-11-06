@@ -20,5 +20,9 @@ module UltraVM
     def installed_at
       @client.get('VM_metrics', :start_time, @uuid).to_time
     end
+
+    def cores
+      @client.get('VM_metrics', :VCPUs_number, @uuid).to_i
+    end
   end
 end
