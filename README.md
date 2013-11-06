@@ -90,7 +90,10 @@ metrics.memory # => 4294881280
 metrics.started_at # => 2011-08-24 12:10:02 UTC
 
 # Get VM install time
-metrics.installed_at # => 011-08-24 12:10:02 UTC 
+metrics.installed_at # => 011-08-24 12:10:02 UTC
+
+# Get VM cores
+metrics.cores # => 2
 ```
 
 ### VBD Block
